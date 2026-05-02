@@ -28,6 +28,25 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        <div className="mt-8 p-4 border-2 border-dashed border-slate-600 rounded-xl text-center">
+  <h3 className="text-lg font-medium mb-4">Ders Notu Yükle</h3>
+  <input 
+    type="file" 
+    onChange={async (e) => {
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const res = await fetch("http://localhost:8000/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      alert(data.message);
+    }}
+    className="block w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700"
+  />
+</div>
       </div>
     </main>
   );

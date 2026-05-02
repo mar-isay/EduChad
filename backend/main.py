@@ -1,3 +1,6 @@
+import shutil
+from fastapi import File, UploadFile
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -24,3 +27,11 @@ def get_universities():
         {"id": 2, "ad": "Moundou Üniversitesi"},
         {"id": 3, "ad": "Abeche Üniversitesi"}
     ]
+UPLOAD_DIR = "uploads"
+
+@app.post("/upload")
+async def upload_file(file: UploadFile = File(...)):
+    file_path = os.path.join(UPLOAD_DIR, file.filename)
+    with open(file_path, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    return {"filename": file.filename, "message": "Dosya başarıyla yüklendi!"}
