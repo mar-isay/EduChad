@@ -1,3 +1,32 @@
+from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
+from google import genai # Yeni kütüphane
+from dotenv import load_dotenv
+import os
+import shutil
+
+load_dotenv()
+app = FastAPI()
+
+# Yeni Gemini Yapılandırması
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/test-ai")
+def test_ai():
+    # Yeni kütüphane yazım şekli
+    response = client.models.generate_content(
+        model="gemini-1.5-flash", 
+        contents="EduChad sistemi için kısa bir teknik onay mesajı ver."
+    )
+    return {"mesaj": response.text}
 import shutil
 from fastapi import File, UploadFile
 import os
