@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [ozet, setOzet] = useState("");
   const [unis, setUnis] = useState([]);
-
   useEffect(() => {
     fetch('http://localhost:8000/universiteler')
       .then(res => res.json())
@@ -31,21 +31,39 @@ export default function Home() {
         <div className="mt-8 p-4 border-2 border-dashed border-slate-600 rounded-xl text-center">
   <h3 className="text-lg font-medium mb-4">Ders Notu Yükle</h3>
   <input 
-    type="file" 
-    onChange={async (e) => {
-      const file = e.target.files[0];
-      const formData = new FormData();
-      formData.append("file", file);
+              type="file" 
+              onChange={async (e) => {
+                const file = e.target.files[0];
+                const formData = new FormData();
+                formData.append("file", file);
 
-      const res = await fetch("http://localhost:8000/upload", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json();
-      alert(data.message);
-    }}
-    className="block w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700"
-  />
+                const res = await fetch("http://localhost:8000/upload", {
+                  method: "POST",
+                  body: formData,
+                });
+                
+                const data = await res.json();
+                if (data.ozet) {
+                  setOzet(data.ozet); // Özeti hafızaya al
+                } else {
+                  alert(data.message);
+                }
+              }}
+              className="block w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700"
+            />
+          </div>
+
+          {/* --- ÖZET KUTUSU (BURAYI EKLE) --- */}
+          {ozet && (
+            <div className="mt-8 p-6 bg-slate-800 border-2 border-blue-500 rounded-2xl shadow-2xl">
+              <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center">
+                ✨ Yapay Zeka Özeti
+              </h3>
+              <div className="text-slate-200 leading-relaxed whitespace-pre-wrap">
+                {ozet}
+              </div>
+            </div>
+          )}
 </div>
       </div>
     </main>
