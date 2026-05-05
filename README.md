@@ -1,7 +1,5 @@
 # 🎓 EduChad: Yapay Zeka Destekli Akademik Platform
-EduChad, akademik materyallere erişimi demokratikleştirmeyi ve yapay zeka araçlarıyla öğrenme verimliliğini 
-artırmayı hedefleyen kapsamlı bir eğitim platformudur. platform artık çok dilli (Fransızca, Arapça, Türkçe) 
-bir yapıya kavuşmuştur.
+ Projenin AmacıEduChad, akademik bilgiye erişimdeki engelleri kaldırmayı hedefleyen dijital bir eğitim köprüsüdür. Özellikle Çad gibi çok dilli akademik yapıların bulunduğu bölgelerde, öğrencilerin ders materyallerine kendi dillerinde ulaşmasını ve karmaşık konuları yapay zeka desteğiyle saniyeler içinde kavramasını sağlar.  "Her öğrenci için eşit, hızlı ve anlaşılır bilgi" vizyonuyla yola çıkan bu platform, geleneksel kağıt notları modern birer dijital asistana dönüştürür.  
 
 
 ## 🎯 Stratejik Hedefler
@@ -23,8 +21,3 @@ bir yapıya kavuşmuştur.
 
 - AI Modeli	    - Google Gemini API	   - Çok dilli metin analizi, PDF özetleme ve akademik asistanlık.
 
-# 🌟 Öne Çıkan Yeni Özellikler (V3)
-🌍 Çok Dilli Destek: Arayüz ve AI özetleri için Türkçe, Fransızca ve Arapça seçenekleri.  
-↔️ RTL Desteği: Arapça kullanıcıları için sağdan sola tam uyumlu arayüz düzeni.  
-📧 Akıllı Kullanıcı Tanıma: Mail tabanlı giriş ve otomatik üniversite/bölüm eşleşmesi (Geliştirme aşamasında).  
-📄 Gelişmiş PDF İşleme: PyMuPDF (fitz) ile akademik dökümanların derinlemesine analizi.
