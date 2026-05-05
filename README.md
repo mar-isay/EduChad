@@ -13,15 +13,15 @@ bir yapıya kavuşmuştur.
 
 
 ## 🛠️ Teknoloji Yığını 
-- Katman	        Teknoloji	           Açıklama
+- Katman	    -    Teknoloji	      -     Açıklama
 
-- Frontend 	    Next.js / React	       Çok dilli (i18n) ve RTL (Arapça) destekli dinamik arayüz.
+- Frontend 	   - Next.js / React	      - Çok dilli (i18n) ve RTL (Arapça) destekli dinamik arayüz.
 
-- Backend      	FastAPI (Python)       Asenkron dosya işleme ve AI modelleriyle yüksek performanslı entegrasyon.
+- Backend    	- FastAPI (Python)       - Asenkron dosya işleme ve AI modelleriyle yüksek performanslı entegrasyon.
 
-- Veritabanı    	PostgreSQL	           Kullanıcı profilleri, üniversite hiyerarşisi ve dosya meta verilerinin yönetimi.
+- Veritabanı   - PostgreSQL	          - Kullanıcı profilleri, üniversite hiyerarşisi ve dosya meta verilerinin yönetimi.
 
-- AI Modeli	    Google Gemini API	   Çok dilli metin analizi, PDF özetleme ve akademik asistanlık.
+- AI Modeli	    - Google Gemini API	   - Çok dilli metin analizi, PDF özetleme ve akademik asistanlık.
 
 # 🌟 Öne Çıkan Yeni Özellikler (V3)
 🌍 Çok Dilli Destek: Arayüz ve AI özetleri için Türkçe, Fransızca ve Arapça seçenekleri.  
